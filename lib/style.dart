@@ -55,7 +55,7 @@ const BlueBodyTextStyle = TextStyle(
   fontFamily: FontName,
   fontWeight: FontWeight.w500,
   fontSize: BodyText,
-  color: Colors.blue,
+  color: Colors.blueGrey,
 );
 
 const WhiteBodyTextStyle = TextStyle(
@@ -77,7 +77,7 @@ const ForgotPasswordTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
   fontSize: SmallText,
   decoration: TextDecoration.underline,
-  color: Colors.blue,
+  color: Colors.blueGrey,
 );
 
 const AchievementsTitleTextStyle = TextStyle(

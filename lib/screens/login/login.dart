@@ -21,16 +21,16 @@ class _LoginState extends State<Login> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: const EdgeInsets.only(top: 50.0),
               child: Center(
                 child: Container(
                     width: 300,
                     height: 240,
-                    child: Image.asset('assets/images/orcalearns_logo.jpeg')),
+                    child: Image.asset('assets/images/logo.jpg')),
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.fromLTRB(15.0, 50.0, 15.0, 0.0),
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 40.0),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -47,23 +47,11 @@ class _LoginState extends State<Login> {
                     labelText: 'Password'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(266.0, 0.0, 15.0, 40.0),
-              child: TextButton(
-                onPressed: () {
-                  //TODO: MAKE FORGOT PASSWORD SCREEN
-                },
-                child: Text(
-                  'Forgot Password?',
-                  style: ForgotPasswordTextStyle,
-                ),
-              ),
-            ),
             Container(
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+                  color: Colors.blueGrey, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -76,7 +64,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(76.0, 20.0, 66.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(73.0, 20.0, 0.0, 0.0),
               child: Row(
                 children: <Widget> [
                   Text(
