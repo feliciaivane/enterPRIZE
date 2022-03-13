@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:enterprize/style.dart';
-import 'login.dart';
+// import 'login.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {
@@ -24,14 +24,7 @@ class _RegisterState extends State<Register> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.fromLTRB(100.0, 55.0, 100.0, 40.0),
-              child: Text(
-                "Register Here",
-                style: TitleTextStyle,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.fromLTRB(15.0, 52.0, 15.0, 0.0),
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -75,9 +68,10 @@ class _RegisterState extends State<Register> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+                  color: Colors.blueGrey, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () async {
+                  Navigator.pop(context);
                   /**try {
                     final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
                     if (newUser != null) {
@@ -93,7 +87,7 @@ class _RegisterState extends State<Register> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(73.0, 20.0, 59.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(67.0, 20.0, 0.0, 0.0),
               child: Row(
                 children: <Widget> [
                   Text(

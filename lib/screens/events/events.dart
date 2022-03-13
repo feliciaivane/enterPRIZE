@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:enterprize/components/navbar.dart';
 
 class Events extends StatefulWidget {
   @override
@@ -14,7 +15,10 @@ class _EventsState extends State<Events> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        title: const Text('Events'),
+      ),
+      drawer: Navbar(),
     );
   }
 }
