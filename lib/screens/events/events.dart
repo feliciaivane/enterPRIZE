@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:enterprize/screens/events/eventpage.dart';
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+import 'package:enterprize/components/navbar.dart';
 
 class Events extends StatefulWidget {
   @override
@@ -65,9 +66,11 @@ class _EventsState extends State<Events> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MaterialApp(
       navigatorKey: navigatorKey,
       home: Scaffold(
+        drawer: Navbar(),
         appBar: AppBar(),
         body: SafeArea(
           child: ListView(
@@ -109,6 +112,5 @@ class _EventsState extends State<Events> {
           ),
         ),
       ),
-    );
   }
 }
