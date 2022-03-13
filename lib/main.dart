@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'style.dart';
 import 'screens/login/login.dart';
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,6 +13,7 @@ void main() async {
 class App extends StatelessWidget {
   @override Widget build(BuildContext context) {
     return MaterialApp(
+        navigatorKey: navigatorKey,
         home: Login(),
         theme: ThemeData(
             appBarTheme: AppBarTheme(

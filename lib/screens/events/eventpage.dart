@@ -1,4 +1,4 @@
-import 'package:enterprize/main.dart';
+
 import 'package:flutter/material.dart';
 import 'package:enterprize/components/navbar.dart';
 import 'events.dart';
@@ -38,13 +38,13 @@ class Eventpage extends StatelessWidget {
                     autoPlay: true,
                   ),
                 ),
-                Center(child: Container(margin: EdgeInsets.all(10), child: Text(item.title))),
+                Center(child: Container(margin: EdgeInsets.all(10), child: Text(item.title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),))),
                 Container(
                     margin: EdgeInsets.all(20), child: Text(item.description)),
                 Container(
                     margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
                     child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(primary: Colors.white, onSurface: Colors.teal.shade50, backgroundColor: Colors.teal.shade200),
+                      style: OutlinedButton.styleFrom(primary: Colors.white, onSurface: Colors.teal.shade50, backgroundColor: Colors.blueGrey),
                       onPressed: () {},
                       child: Text("Sign Up"),
                     ))

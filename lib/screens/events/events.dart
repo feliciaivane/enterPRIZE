@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:enterprize/screens/events/eventpage.dart';
 import 'package:enterprize/components/navbar.dart';
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+import '../../main.dart';
 
 
 class Events extends StatefulWidget {
@@ -60,16 +61,24 @@ class _EventsState extends State<Events> {
         "Food making",
         'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/7/20/0/HE_Salad-Olive-Oil_s4x3.jpg.rend.hgtvcom.616.462.suffix/1490370794762.jpeg',
         ['food', 'cooking'],
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.')
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.'),
+    Event(
+        "Terrarium Making",
+        "https://www.thespruce.com/thmb/YDuotPpcMtxRUmwzo-jvNHGGPdo=/4118x2749/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-make-terrariums-848007-13-58ad30a4238043e489d8deaba771e7c2.jpg",
+        ['plants', 'terrarium', 'nature'],
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.'),
+    Event(
+        "Food making",
+        'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/7/20/0/HE_Salad-Olive-Oil_s4x3.jpg.rend.hgtvcom.616.462.suffix/1490370794762.jpeg',
+        ['food', 'cooking'],
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.')
   ];
 
   String search = '';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: navigatorKey,
-      home: Scaffold(
+    return Scaffold(
         drawer: Navbar(),
         appBar: AppBar(),
         body: SafeArea(
@@ -111,6 +120,6 @@ class _EventsState extends State<Events> {
             ],
           ),
         ),
-      ),);
+      );
   }
 }
