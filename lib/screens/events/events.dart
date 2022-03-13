@@ -66,12 +66,12 @@ class _EventsState extends State<Events> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return MaterialApp(
       navigatorKey: navigatorKey,
       home: Scaffold(
         drawer: Navbar(),
         appBar: AppBar(),
+        drawer: Navbar(),
         body: SafeArea(
           child: ListView(
             children: [

@@ -20,7 +20,6 @@ class _RegisterState extends State<Register> {
       appBar: AppBar(
         title: Text("Register Page"),
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -72,7 +71,6 @@ class _RegisterState extends State<Register> {
                     }
                 ),
               ),
-
             Container(
               height: 50,
               width: 250,
@@ -87,7 +85,7 @@ class _RegisterState extends State<Register> {
                       Navigator.pop(context); }
                   } catch (e) {
                     print(e);
-                  }*/
+                  } */
                 },
                 child: Text(
                   "Register",
