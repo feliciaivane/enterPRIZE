@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:enterprize/screens/events/eventpage.dart';
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 import 'package:enterprize/components/navbar.dart';
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 
 class Events extends StatefulWidget {
   @override
@@ -71,7 +72,6 @@ class _EventsState extends State<Events> {
       home: Scaffold(
         drawer: Navbar(),
         appBar: AppBar(),
-        drawer: Navbar(),
         body: SafeArea(
           child: ListView(
             children: [
@@ -111,6 +111,6 @@ class _EventsState extends State<Events> {
             ],
           ),
         ),
-      ),
+      ),);
   }
 }

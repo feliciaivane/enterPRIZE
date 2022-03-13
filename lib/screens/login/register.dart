@@ -29,7 +29,7 @@ class _RegisterState extends State<Register> {
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Name'),
-              ),
+              )),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
@@ -100,7 +100,7 @@ class _RegisterState extends State<Register> {
                   Text(
                     "Already have an account? ",
                     style: BlackBodyTextStyle,
-                  ),
+                  )],
                 ),
               ),
               Padding(
@@ -125,7 +125,6 @@ class _RegisterState extends State<Register> {
             ],
           ),
         ),
-      ),
     );
   }
 }

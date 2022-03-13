@@ -1,6 +1,6 @@
 import 'package:enterprize/main.dart';
 import 'package:flutter/material.dart';
-
+import 'package:enterprize/components/navbar.dart';
 import 'events.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -19,6 +19,7 @@ class Eventpage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
+        drawer: Navbar(),
         body: SafeArea(
           child: Center(
             child: ListView(
