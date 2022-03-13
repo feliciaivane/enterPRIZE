@@ -21,15 +21,6 @@ class _LoginState extends State<Login> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Center(
-                child: Container(
-                    width: 300,
-                    height: 240,
-                    child: Image.asset('assets/images/orcalearns_logo.jpeg')),
-              ),
-            ),
-            Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 decoration: InputDecoration(
