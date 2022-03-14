@@ -3,8 +3,36 @@ import 'package:enterprize/screens/events/events.dart';
 import 'package:enterprize/screens/shop/shop.dart';
 import 'package:enterprize/screens/profile/profile.dart';
 import 'package:enterprize/screens/login/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Navbar extends StatelessWidget {
+class Navbar extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _NavbarState();
+  }
+
+}
+
+class _NavbarState extends State<Navbar> {
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
+  var userData;
+
+  void getUserData() async {
+    final user = _auth.currentUser;
+    await _firestore.collection("User").doc(user?.uid).collection("Profile").doc(user?.uid).get().then((value) {
+      userData = value.data();
+    });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState3
+    setState(() {
+      getUserData();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -12,8 +40,8 @@ class Navbar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text('Kermit Enterprise'),
-            accountEmail: Text('Enterprise'),
+            accountName: Text('${userData['firstName']}'),
+            accountEmail: Text('${userData['email']}'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
