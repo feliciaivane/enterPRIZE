@@ -3,18 +3,20 @@ import 'package:flutter_cart/model/cart_model.dart';
 import 'package:enterprize/screens/shop/models/catalog.dart';
 import 'package:enterprize/screens/shop/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
+import '../../../components/navbar.dart';
 
 class MyCatalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Navbar(),
       body: CustomScrollView(
         slivers: [
           _MyAppBar(),
           const SliverToBoxAdapter(child: SizedBox(height: 12)),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                    (context, index) => _MyListItem(index)),
+                (context, index) => _MyListItem(index)),
           ),
         ],
       ),
@@ -54,9 +56,9 @@ class __AddButtonState extends State<_AddButton> {
       onPressed: _isInCart != 0
           ? null
           : () {
-        _cartProvider.addToCart(widget.item);
-        setState(() {});
-      },
+              _cartProvider.addToCart(widget.item);
+              setState(() {});
+            },
       style: ButtonStyle(
         overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
           if (states.contains(MaterialState.pressed)) {
@@ -108,39 +110,37 @@ class _MyListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var item = context.select<CatalogModel, Item>(
-          (catalog) => catalog.getByPosition(index),
+      (catalog) => catalog.getByPosition(index),
     );
     var textTheme = Theme.of(context).textTheme.headline6;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, '/item');
-        }, // Handle your callback
-        child: LimitedBox(
-          maxHeight: 48,
-          child: Row(
-            children: [
-              AspectRatio(
-                aspectRatio: 1,
-                child: Container(
-                  child: item.image,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, '/item');
+          }, // Handle your callback
+          child: LimitedBox(
+            maxHeight: 48,
+            child: Row(
+              children: [
+                AspectRatio(
+                  aspectRatio: 1,
+                  child: Container(
+                    child: item.image,
+                  ),
                 ),
-              ),
-              const SizedBox(width: 24),
-              Expanded(
-                child: Text(item.name, style: textTheme),
-              ),
-              const SizedBox(width: 24),
-              Consumer<CartProvider>(builder: (context, cart, child) {
-                return _AddButton(item: item);
-              }),
-            ],
+                const SizedBox(width: 24),
+                Expanded(
+                  child: Text(item.name, style: textTheme),
+                ),
+                const SizedBox(width: 24),
+                Consumer<CartProvider>(builder: (context, cart, child) {
+                  return _AddButton(item: item);
+                }),
+              ],
+            ),
           ),
-        ),
-      )
-
-    );
+        ));
   }
 }

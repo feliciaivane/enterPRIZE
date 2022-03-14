@@ -31,6 +31,7 @@ class _RegisterState extends State<Register> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Register Page"),
+        backgroundColor: Colors.blueGrey,
       ),
       body: LoadingOverlay(
         isLoading: isLoading,
@@ -38,7 +39,7 @@ class _RegisterState extends State<Register> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.fromLTRB(15.0, 52.0, 15.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(15.0, 52.0, 15.0, 15.0),
                 child: TextField(
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
@@ -80,7 +81,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 50.0),
+                padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0.0),
                 child: TextField(
                     textAlign: TextAlign.center,
                     obscureText: true,
@@ -146,7 +147,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(73.0, 20.0, 59.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(68.0, 20.0, 0.0, 0.0),
                 child: Row(
                   children: <Widget>[
                     Text(
