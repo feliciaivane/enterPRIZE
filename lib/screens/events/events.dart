@@ -73,25 +73,25 @@ class _EventsState extends State<Events> {
   }
   var events = [
     Event(
-        "Terrarium Making",
+        "SGreen: Terrarium Making",
         "https://www.thespruce.com/thmb/YDuotPpcMtxRUmwzo-jvNHGGPdo=/4118x2749/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-make-terrariums-848007-13-58ad30a4238043e489d8deaba771e7c2.jpg",
         ['plants', 'terrarium', 'nature'],
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.'),
+    'Do you love watching mini ecosystems? Do you want to have a garden without actually gardening? If yes, this event is for you! Come and join us! All proceeds will be donated to charity!'),
     Event(
-        "Food making",
+        "HeartFood: Food making",
         'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/7/20/0/HE_Salad-Olive-Oil_s4x3.jpg.rend.hgtvcom.616.462.suffix/1490370794762.jpeg',
         ['food', 'cooking'],
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.'),
+    'Looking for volunteers to help us prepare a special meal for the elderly living in the vicinity, come join us!'),
     Event(
-        "Terrarium Making",
-        "https://www.thespruce.com/thmb/YDuotPpcMtxRUmwzo-jvNHGGPdo=/4118x2749/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-make-terrariums-848007-13-58ad30a4238043e489d8deaba771e7c2.jpg",
+        "ilovenature: Plant with Us!",
+        "https://lot.dhl.com/wp-content/uploads/2019/11/Article-Key-Image-453431968.jpg",
         ['plants', 'terrarium', 'nature'],
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.'),
+        'SGreen is a social enterprise that aspires to keep our garden city as green as possible. Since its formation in 2019, together with volunteers, we have planted over 10000 trees all around Singapore! Come join us in our next tree-planting session!'),
     Event(
-        "Food making",
-        'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/7/20/0/HE_Salad-Olive-Oil_s4x3.jpg.rend.hgtvcom.616.462.suffix/1490370794762.jpeg',
+        "The Place: Food distribution",
+        'https://www.safefood.net/getmedia/59f48389-fc57-4b34-9444-c8d109f889a5/cooking-vegetables.jpg?w=2000&h=1333&ext=.jpg&width=1360&resizemode=force',
         ['food', 'cooking'],
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum magna purus, vel lobortis lacus accumsan ac. Proin tempor leo vitae ante luctus congue. Praesent blandit, orci id scelerisque dapibus, felis metus consequat neque, et aliquet massa arcu non erat. Phasellus risus ex, faucibus at feugiat a, interdum id odio. Cras ac augue quis turpis feugiat placerat quis eget metus. Vestibulum finibus urna quis elit porttitor mollis. Duis non posuere ante, sit amet laoreet felis. Sed sit amet vulputate felis. Cras condimentum, velit sed ullamcorper pulvinar, sem est sagittis lorem, non sodales urna risus non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut dictum lorem. Aliquam volutpat, tortor et placerat egestas, odio ex vehicula lorem, vitae luctus eros nisi nec neque. Nunc et blandit odio, posuere scelerisque nulla. Aliquam in lorem leo. Suspendisse fermentum dictum nibh, vitae elementum purus pharetra nec. Sed quis scelerisque nisl.')
+        'We need 30 kind volunteers to help us with food distribution in Sengkang HDB Blk 48.')
   ];
 
   String search = '';

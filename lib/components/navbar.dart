@@ -28,11 +28,13 @@ class _NavbarState extends State<Navbar> {
       });
     });
   }
+
   @override
   void initState() {
     // TODO: implement initState3
     getUserData();
   }
+
   @override
   Widget build(BuildContext context) {
     getUserData();
@@ -45,8 +47,7 @@ class _NavbarState extends State<Navbar> {
             accountEmail: Text('${userData['email']}'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.network(
-                  'https://oflutter.com/wp-content/uploads/2021/02/girl-profile.png',
+                child: Image.asset('assets/images/dp.jpeg',
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,

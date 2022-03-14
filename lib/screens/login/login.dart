@@ -3,7 +3,6 @@ import 'package:enterprize/style.dart';
 import 'package:enterprize/screens/events/events.dart';
 import 'register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 
 class Login extends StatefulWidget {

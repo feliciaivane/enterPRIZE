@@ -18,7 +18,9 @@ class Eventpage extends StatelessWidget {
     final item = ModalRoute.of(context)!.settings.arguments as Event;
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.blueGrey,
+        ),
         drawer: Navbar(),
         body: SafeArea(
           child: Center(
