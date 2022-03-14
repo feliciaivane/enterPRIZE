@@ -1,225 +1,127 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter_add_to_cart_button/flutter_add_to_cart_button.dart';
-import 'package:enterprize/components/navbar.dart';
-
-import '../../main.dart';
-
-void main() {
-  runApp(Shop());
-}
+import 'common/theme.dart';
+import 'models/cart.dart';
+import 'models/catalog.dart';
+import 'providers/cart_provider.dart';
+import 'screens/cart_screen.dart';
+import 'screens/catalog_screen.dart';
+import 'screens/item_screen.dart';
+import 'package:provider/provider.dart';
 
 class Shop extends StatelessWidget {
   @override
-  Widget build(BuildContext ctxt) {
-    return MaterialApp(
-      routes: {
-        //'/second': (context) => SecondScreen(),
-        '/second': (context) => MyApp(),
-      },
-      title: 'MyApp',
-      home: new FirstScreen(),
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        Provider(create: (context) => CatalogModel()),
+        ChangeNotifierProxyProvider<CatalogModel, CartModel>(
+          create: (context) => CartModel(),
+          update: (context, catalog, cart) {
+            if (cart == null) throw ArgumentError.notNull('cart');
+            cart.catalog = catalog;
+            return cart;
+          },
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CartProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'flutter_cart',
+        theme: appTheme,
+        home: MyCatalog(),
+        initialRoute: '/catalog',
+        routes: {
+          '/catalog': (context) => MyCatalog(),
+          '/cart': (context) => MyCart(),
+          '/item': (context) => MyItem(),
+        },
+      ),
     );
   }
 }
 
-class FirstScreen extends StatelessWidget {
+/* class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Shop',
-        home: Scaffold(
-          drawer: Navbar(),
-          appBar: AppBar(
-            title: const Text('Shop'),
-            backgroundColor: Colors.teal,
-          ),
-          body: SingleChildScrollView(
-            child: Column(children: [
-              item1,
-            ]),
-          ),
-        ));
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
   }
-}
-
-Widget item1 = InkWell(
-  child: create,
-  onTap: () {
-    navigatorKey.currentState?.pushNamed('/second');
-  }, // Handle your callback
-);
-
-Widget create = Container(
-  padding: const EdgeInsets.all(32),
-  child: Row(
-    children: [
-      Image.asset(
-        'assets/images/shirt.jpeg',
-        width: 100,
-        height: 100,
-        fit: BoxFit.cover,
-      ),
-      Expanded(
-        /*1*/
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /*2*/
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
-                '<Item Name>',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  height: 1,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            Text(
-              '<Insert description here>',
-              style: TextStyle(
-                color: Colors.grey[500],
-              ),
-            ),
-          ],
-        ),
-      ),
-      /*3*/
-      const Text('<price>'),
-    ],
-  ),
-);
-
-Widget item = Title;
-
-Widget Title = Container(
-  padding: const EdgeInsets.all(32),
-  child: Row(
-    children: [
-      Expanded(
-        /*1*/
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /*2*/
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
-                '<Item Name>',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  height: 1,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-            Text(
-              '<Price>',
-              style: TextStyle(
-                height: 2,
-                fontSize: 18,
-              ),
-            ),
-            Text(
-              'Insert item description here ...........................................................',
-              //textAlign: TextAlign.center,
-              softWrap: true,
-              style: TextStyle(height: 1),
-            ),
-          ],
-        ),
-      ),
-    ],
-  ),
-);
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  AddToCartButtonStateId stateId = AddToCartButtonStateId.idle;
 
   @override
   Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
     return Scaffold(
-      drawer: Navbar(),
       appBar: AppBar(
-        title: Text("<Item Name>"),
-        backgroundColor: Colors.teal,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
       ),
-      body: SingleChildScrollView(
-        child: Column(children: [
-          Image.asset(
-            'assets/images/shirt.jpeg',
-            width: 500,
-            height: 350,
-            fit: BoxFit.cover,
-          ),
-          item,
-          Column(
-            children: [
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: AddToCartButton(
-                    trolley: Image.asset(
-                      'assets/ic_cart.png',
-                      width: 24,
-                      height: 24,
-                      color: Colors.white,
-                    ),
-                    text: Text(
-                      'Add to cart',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.fade,
-                    ),
-                    check: SizedBox(
-                      width: 48,
-                      height: 48,
-                      child: Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 24,
-                      ),
-                    ),
-                    borderRadius: BorderRadius.circular(24),
-                    backgroundColor: Colors.deepOrangeAccent,
-                    onPressed: (id) {
-                      if (id == AddToCartButtonStateId.idle) {
-                        //handle logic when pressed on idle state button.
-                        setState(() {
-                          stateId = AddToCartButtonStateId.loading;
-                          Future.delayed(Duration(seconds: 3), () {
-                            setState(() {
-                              stateId = AddToCartButtonStateId.done;
-                            });
-                          });
-                        });
-                      } else if (id == AddToCartButtonStateId.done) {
-                        //handle logic when pressed on done state button.
-                        setState(() {
-                          stateId = AddToCartButtonStateId.idle;
-                        });
-                      }
-                    },
-                    stateId: stateId,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ]),
+      body: Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          // Column is also a layout widget. It takes a list of children and
+          // arranges them vertically. By default, it sizes itself to fit its
+          // children horizontally, and tries to be as tall as its parent.
+          //
+          // Invoke "debug painting" (press "p" in the console, choose the
+          // "Toggle Debug Paint" action from the Flutter Inspector in Android
+          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+          // to see the wireframe for each widget.
+          //
+          // Column has various properties to control how it sizes itself and
+          // how it positions its children. Here we use mainAxisAlignment to
+          // center the children vertically; the main axis here is the vertical
+          // axis because Columns are vertical (the cross axis would be
+          // horizontal).
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ],
+        ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
-
+} */
