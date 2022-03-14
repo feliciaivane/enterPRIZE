@@ -30,7 +30,7 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Register Page"),
+        title: Text("Registration"),
         backgroundColor: Colors.blueGrey,
       ),
       body: LoadingOverlay(
