@@ -42,7 +42,13 @@ class Eventpage extends StatelessWidget {
                 ),
                 Center(child: Container(margin: EdgeInsets.all(10), child: Text(item.title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),))),
                 Container(
-                    margin: EdgeInsets.all(20), child: Text(item.description)),
+                    margin: EdgeInsets.fromLTRB(20, 20, 20, 0), child: Text(item.date)),
+                Container(
+                    margin: EdgeInsets.fromLTRB(20, 10, 20, 0), child: Text(item.time)),
+                Container(
+                    margin: EdgeInsets.fromLTRB(20, 10, 20, 0), child: Text(item.location)),
+                Container(
+                    margin: EdgeInsets.fromLTRB(20, 40, 20, 0), child: Text(item.description)),
                 Container(
                     margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
                     child: OutlinedButton(
