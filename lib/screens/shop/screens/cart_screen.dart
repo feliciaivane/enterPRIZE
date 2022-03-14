@@ -7,8 +7,8 @@ class MyCart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cart', style: Theme.of(context).textTheme.headline1),
-        backgroundColor: Colors.teal,
+        title: Text('Cart'),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Container(
         color: Colors.white,

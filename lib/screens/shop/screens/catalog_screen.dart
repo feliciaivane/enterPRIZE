@@ -78,7 +78,8 @@ class _MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      title: Text('Catalog', style: Theme.of(context).textTheme.headline1),
+      title: Text('Catalog'),
+      backgroundColor: Colors.blueGrey,
       floating: true,
       actions: [
         Stack(

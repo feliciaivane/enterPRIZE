@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CatalogModel {
   static List<String> itemNames = [
-    'Black Model Tee',
+    'White Model Tee',
   ];
   Item getById(int id) => Item(id, itemNames[id % itemNames.length]);
   Item getByPosition(int position) {

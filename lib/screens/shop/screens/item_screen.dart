@@ -5,8 +5,8 @@ class MyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Black Model Tee"),
-        backgroundColor: Colors.teal,
+        title: Text("White Model Tee"),
+        backgroundColor: Colors.blueGrey,
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -36,7 +36,7 @@ Widget item = Container(
             Container(
               padding: const EdgeInsets.only(bottom: 8),
               child: const Text(
-                'Black Model Tee',
+                'White Model Tee',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   height: 1,
@@ -53,7 +53,7 @@ Widget item = Container(
             ),
             SizedBox(height: 10),
             Text(
-              'This shirt is amazing. Before it was made with a beautiful metallic black, now it is made with a fantastic matte black.',
+              'This shirt is amazing. Please buy it to support our cause!',
               //textAlign: TextAlign.center,
               softWrap: true,
               style: TextStyle(height: 1),
