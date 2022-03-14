@@ -23,18 +23,19 @@ class _NavbarState extends State<Navbar> {
   void getUserData() async {
     final user = _auth.currentUser;
     await _firestore.collection("User").doc(user?.uid).collection("Profile").doc(user?.uid).get().then((value) {
-      userData = value.data();
+      setState(() {
+        userData = value.data();
+      });
     });
   }
   @override
   void initState() {
     // TODO: implement initState3
-    setState(() {
-      getUserData();
-    });
+    getUserData();
   }
   @override
   Widget build(BuildContext context) {
+    getUserData();
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
