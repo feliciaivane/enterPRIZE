@@ -19,7 +19,7 @@ class _NavbarState extends State<Navbar> {
   final _firestore = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
   var userData;
-
+  
   void getUserData() async {
     final user = _auth.currentUser;
     await _firestore.collection("User").doc(user?.uid).collection("Profile").doc(user?.uid).get().then((value) {
