@@ -1,17 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:enterprize/components/navbar.dart';
-import 'events.dart';
+import 'event.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:enterprize/screens/events/event.dart';
 
 class Eventpage extends StatelessWidget {
-  List imgList = [
-    'https://picsum.photos/500/300?random=1',
-    'https://picsum.photos/500/300?random=2',
-    'https://picsum.photos/500/300?random=3',
-    'https://picsum.photos/500/300?random=4',
-    'https://picsum.photos/500/300?random=5',
-  ];
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -27,12 +21,12 @@ class Eventpage extends StatelessWidget {
             child: ListView(
               children: [
                 CarouselSlider.builder(
-                  itemCount: imgList.length,
+                  itemCount: item.pic_url.length,
                   itemBuilder: (context, index, realIndex) {
                     print(index);
                     return Container(
                       // height: 200,
-                      child: Image.network(imgList[index]),
+                      child: Image.network(item.pic_url[index]),
                     );
                   },
                   options: CarouselOptions(
