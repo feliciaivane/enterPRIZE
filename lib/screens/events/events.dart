@@ -100,7 +100,10 @@ class _EventsState extends State<Events> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: Navbar(),
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text("Events"),
+          backgroundColor: Colors.blueGrey,
+        ),
         body: SafeArea(
           child: ListView(
             children: [
