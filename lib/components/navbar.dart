@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:enterprize/screens/events/events.dart';
-import 'package:enterprize/screens/shop/shop.dart';
+import 'package:enterprize/screens/shop/main.dart';
 import 'package:enterprize/screens/profile/profile.dart';
 import 'package:enterprize/screens/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
